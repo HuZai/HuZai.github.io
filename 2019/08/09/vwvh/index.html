@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        vue项目 vw 适配px自动转vw 配置以及 兼容处理 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>ahu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-postcss-import-相关配置更多文档"><span class="toc-text">1.postcss-import 相关配置更多文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-postcss-url-相关配置更多文档"><span class="toc-text">2.postcss-url 相关配置更多文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-autoprefixer-相关配置更多文档"><span class="toc-text">3.autoprefixer 相关配置更多文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-postcss-aspect-ratio-mini-相关配置更多文档"><span class="toc-text">4.postcss-aspect-ratio-mini 相关配置更多文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-postcss-preset-env-相关配置更多文档"><span class="toc-text">5.postcss-preset-env 相关配置更多文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-postcss-px-to-viewport-相关配置更多文档"><span class="toc-text">6.postcss-px-to-viewport 相关配置更多文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-postcss-write-svg-相关配置更多文档"><span class="toc-text">7.postcss-write-svg 相关配置更多文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-cssnano-相关配置更多文档"><span class="toc-text">8.cssnano 相关配置更多文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-Viewport-Units-Buggyfill-相关配置更多文档"><span class="toc-text">9.Viewport Units Buggyfill 相关配置更多文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-postcss-viewport-units-相关配置更多文档"><span class="toc-text">10.postcss-viewport-units 相关配置更多文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下面说一下-安装与所有配置"><span class="toc-text">下面说一下 安装与所有配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#相关所有配置-pageage-json"><span class="toc-text">相关所有配置 pageage.json</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        vue项目 vw 适配px自动转vw 配置以及 兼容处理
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-08-09 00:00:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#vue" title="vue">vue</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#postcss" title="postcss">postcss</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <hr>
+<pre><code>使用postcss相关插件:
+postcss-px-to-viewport 做px 转 vw
+postcss-viewport-units与viewport-units-buggyfill 做低版本兼容处理
+其他postcss相关插件 对写css的友好帮助</code></pre><hr>
+<p><code>下面看用到的所有 postcss插件</code><br> 1.<a href="https://github.com/postcss/postcss-import" target="_blank" rel="noopener">postcss-import</a><br> 2.<a href="https://github.com/postcss/postcss-url" target="_blank" rel="noopener">postcss-url</a><br> 3.<a href="https://github.com/postcss/autoprefixer" target="_blank" rel="noopener">autoprefixer</a><br> 4.<a href="https://github.com/yisibl/postcss-aspect-ratio-mini" target="_blank" rel="noopener">postcss-aspect-ratio-mini</a><br> 5.<a href="https://github.com/MoOx/postcss-cssnext" target="_blank" rel="noopener"><del>postcss-cssnext</del></a> || <a href="https://github.com/csstools/postcss-preset-env" target="_blank" rel="noopener">postcss-preset-env</a><br> 6.<a href="https://github.com/evrone/postcss-px-to-viewport" target="_blank" rel="noopener">postcss-px-to-viewport</a><br> 7.<a href="https://github.com/jonathantneal/postcss-write-svg" target="_blank" rel="noopener">postcss-write-svg</a><br> 8.<a href="https://github.com/ben-eb/cssnano" target="_blank" rel="noopener">cssnano</a><br> 9.<a href="https://github.com/rodneyrehm/viewport-units-buggyfill" target="_blank" rel="noopener">Viewport Units Buggyfill</a><br> 10.<a href="https://github.com/springuper/postcss-viewport-units" target="_blank" rel="noopener">postcss-viewport-units</a></p>
+<h3 id="1-postcss-import-相关配置更多文档"><a href="#1-postcss-import-相关配置更多文档" class="headerlink" title="1.postcss-import 相关配置更多文档"></a>1.postcss-import <a href="https://github.com/postcss/postcss-import" target="_blank" rel="noopener">相关配置更多文档</a></h3><pre><code>功能是解决@import引入路径繁琐问题。
+它可以让你很轻易的使用本地文件、web_modules或者node_modules的文件。
+它一般可以结合postcss-url 使用更加容易。
+如下使用：
+/* can consume `node_modules`, `web_modules` or local modules */
+@import &quot;cssrecipes-defaults&quot;; /* 等价与 @import &quot;../node_modules/cssrecipes-defaults/index.css&quot;; */
+@import &quot;normalize.css&quot;; /* 等价与 @import &quot;../node_modules/normalize.css/normalize.css&quot;; */
+@import &quot;foo.css&quot;; /* relative to css/ according to `from` option above */
+@import &quot;bar.css&quot; (min-width: 25em);
+body {
+  background: black;
+}
+相当于引入
+/* ... content of ../node_modules/cssrecipes-defaults/index.css */
+/* ... content of ../node_modules/normalize.css/normalize.css */
+/* ... content of css/foo.css */
+@media (min-width: 25em) {
+/* ... content of css/bar.css  bar.css里 min-width下面的css*/
+}
+body {
+  background: black;
+}</code></pre><h3 id="2-postcss-url-相关配置更多文档"><a href="#2-postcss-url-相关配置更多文档" class="headerlink" title="2.postcss-url 相关配置更多文档"></a>2.postcss-url <a href="https://github.com/postcss/postcss-url" target="_blank" rel="noopener">相关配置更多文档</a></h3><pre><code>主要用来处理文件，比如图片文件、字体文件等引用路径的处理。
+vue项目里 Vue Loader 拥有相关功能所以 postcss-url 不需要做特殊设置</code></pre><p>   <a href="https://vue-loader.vuejs.org/zh/guide/asset-url.html#%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99" target="_blank" rel="noopener">Vue Loader相关详细配置</a></p>
+<h3 id="3-autoprefixer-相关配置更多文档"><a href="#3-autoprefixer-相关配置更多文档" class="headerlink" title="3.autoprefixer 相关配置更多文档"></a>3.autoprefixer <a href="https://github.com/postcss/autoprefixer" target="_blank" rel="noopener">相关配置更多文档</a></h3><pre><code>它是用来自动处理浏览器前缀的一个插件
+它使用browserslist 目标浏览器配置 来处理浏览器兼容性前缀
+
+before
+::placeholder {
+  color: gray;
+}
+
+.image {
+  background-image: url(image@1x.png);
+}
+@media (min-resolution: 2dppx) {
+  .image {
+    background-image: url(image@2x.png);
+  }
+}
+after
+::-webkit-input-placeholder {
+  color: gray;
+}
+::-moz-placeholder {
+  color: gray;
+}
+:-ms-input-placeholder {
+  color: gray;
+}
+::-ms-input-placeholder {
+  color: gray;
+}
+::placeholder {
+  color: gray;
+}
+
+.image {
+  background-image: url(image@1x.png);
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+       (-o-min-device-pixel-ratio: 2/1),
+       (min-resolution: 2dppx) {
+  .image {
+    background-image: url(image@2x.png);
+  }
+}</code></pre><hr>
+<pre><code>以上三个插件 vue cli 默认安装了
+默认配置
+{
+    ...
+    &quot;autoprefixer&quot;: {},
+    &quot;postcss-import&quot;: {},
+    &quot;postcss-url&quot;: {},
+    ...
+}
+共用browserslist配置的 插件有
+Autoprefixer
+Babel
+postcss-preset-env
+eslint-plugin-compat
+stylelint-no-unsupported-browser-features
+postcss-normalize
+obsolete-webpack-plugin</code></pre><p> <a href="https://github.com/browserslist/browserslist" target="_blank" rel="noopener">browserslist详细配置</a></p>
+<h3 id="4-postcss-aspect-ratio-mini-相关配置更多文档"><a href="#4-postcss-aspect-ratio-mini-相关配置更多文档" class="headerlink" title="4.postcss-aspect-ratio-mini 相关配置更多文档"></a>4.postcss-aspect-ratio-mini <a href="https://github.com/yisibl/postcss-aspect-ratio-mini" target="_blank" rel="noopener">相关配置更多文档</a></h3><pre><code>用来处理宽高比的
+Input
+.aspect-box {
+    position: relative;
+}
+
+.aspect-box {
+    aspect-ratio: &apos;16:9&apos;;
+}
+Output
+.aspect-box {
+    position: relative;
+}
+
+.aspect-box:before {
+    padding-top: 56.25%;
+}</code></pre><p>具体使用例子 添加公共样式</p>
+<pre><code>[aspectratio] {
+  position: relative;
+}
+[aspectratio]::before {
+  content: &apos;&apos;;
+  display: block;
+  width: 1px;
+  margin-left: -1px;
+  height: 0;
+}
+[aspectratio-content] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}</code></pre><p>具体使用html 如下: （如果[w-375-100]还想加其他的css 属性比如background 需要跟aspect-ratio 分开单独另写。否则background 丢失）</p>
+<pre><code>&lt;div aspectratio w-375-100&gt;
+  &lt;div aspectratio-content&gt;content&lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+    [w-375-100] {
+      aspect-ratio: &apos;375:100&apos;;
+    }
+    [w-375-100] {
+          background: #eeeeee;
+    }
+&lt;/style&gt;</code></pre><h3 id="5-postcss-preset-env-相关配置更多文档"><a href="#5-postcss-preset-env-相关配置更多文档" class="headerlink" title="5.postcss-preset-env 相关配置更多文档"></a>5.postcss-preset-env <a href="https://moox.io/blog/deprecating-cssnext/" target="_blank" rel="noopener">相关配置更多文档</a></h3><pre><code>postcss-preset-env 取代了postcss-cssnext 
+postcss-preset-env比postcss-cssnext功能更强大
+postcss-preset-env 实质是 cssnext 让我们使用CSS未来的特性
+例子
+:root {
+  --mainColor: red;
+}
+
+a {
+  color: var(--mainColor);
+}</code></pre><p><a href="https://cssnext.github.io/features/" target="_blank" rel="noopener">更多cssnext特性</a></p>
+<h3 id="6-postcss-px-to-viewport-相关配置更多文档"><a href="#6-postcss-px-to-viewport-相关配置更多文档" class="headerlink" title="6.postcss-px-to-viewport 相关配置更多文档"></a>6.postcss-px-to-viewport <a href="https://github.com/evrone/postcss-px-to-viewport" target="_blank" rel="noopener">相关配置更多文档</a></h3><pre><code>常用配置如下
+&quot;postcss-px-to-viewport&quot;: {
+        &quot;viewportWidth&quot;: 375,   // 视窗的宽度，对应的是我们设计稿的宽度
+        &quot;unitPrecision&quot;: 5,     //指定`px`转换为视窗单位值的小数位数
+        &quot;viewportUnit&quot;: &quot;vw&quot;,   // 指定需要转换成的视窗单位，建议使用vw
+        &quot;selectorBlackList&quot;: [  // 指定不转换为视窗单位的类，可以自定义，可以无限添加,
+          &quot;.ignore&quot;,
+          &quot;.hairlines&quot;
+        ],
+        &quot;minPixelValue&quot;: 1,   // 小于或等于`1px`不转换为视窗单位 可随意设置
+        &quot;mediaQuery&quot;: false     //是否允许在媒体查询中转换`px`
+      },
+
+ px 转换原则
+ 100vw=375px 1vw=3.75px</code></pre><h3 id="7-postcss-write-svg-相关配置更多文档"><a href="#7-postcss-write-svg-相关配置更多文档" class="headerlink" title="7.postcss-write-svg 相关配置更多文档"></a>7.postcss-write-svg <a href="https://github.com/jonathantneal/postcss-write-svg" target="_blank" rel="noopener">相关配置更多文档</a></h3><pre><code>它主要用来处理移动端1px的解决方案
+input
+@svg square {
+    @rect {
+        fill: var(--color, black);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#example {
+    background: white svg(square param(--color #00b1ff));
+}
+output
+#example {
+    background: white url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos;%3E%3Crect fill=&apos;%2300b1ff&apos; width=&apos;100%25&apos; height=&apos;100%25&apos;/%3E%3C/svg%3E&quot;);
+}</code></pre><p> <a href="https://jonneal.dev/postcss-write-svg/" target="_blank" rel="noopener">在线使用postcss-write-svg </a></p>
+<h3 id="8-cssnano-相关配置更多文档"><a href="#8-cssnano-相关配置更多文档" class="headerlink" title="8.cssnano 相关配置更多文档"></a>8.cssnano <a href="https://github.com/ben-eb/cssnano" target="_blank" rel="noopener">相关配置更多文档</a></h3><pre><code>它主要是对css 进行压缩清理对CSS代码执行转换优化
+配置如下 使用 cssnano advanced设置 
+&quot;cssnano&quot;: {
+        &quot;preset&quot;: [
+          &quot;advanced&quot;,
+          {
+            &quot;autoprefixer&quot;: false,
+            &quot;zindex&quot;: false
+          }
+        ]
+      }
+关闭autoprefixer vue默认安装了 autoprefixer 
+关闭 zIndex 否则 css zIndex 可能会都变成1</code></pre><p> <a href="https://cssnano.co/guides/optimisations/" target="_blank" rel="noopener">cssnano详细优化配置</a></p>
+<h3 id="9-Viewport-Units-Buggyfill-相关配置更多文档"><a href="#9-Viewport-Units-Buggyfill-相关配置更多文档" class="headerlink" title="9.Viewport Units Buggyfill 相关配置更多文档"></a>9.Viewport Units Buggyfill <a href="https://github.com/rodneyrehm/viewport-units-buggyfill" target="_blank" rel="noopener">相关配置更多文档</a></h3><pre><code>var hacks = require(&apos;viewport-units-buggyfill/.hacks&apos;);
+require(&apos;viewport-units-buggyfill&apos;).init({
+  hacks: hacks
+});
+它需要你的CSS中，只要使用到了viewport的单位（vw、vh、vmin或vmax ）地方，都需添加content：
+例：
+.test {
+    width: 50vw;
+    height: 50vw;
+    /* hack to engage viewport-units-buggyfill */
+    content: &apos;viewport-units-buggyfill;  width: 50vw;height: 50vw;&apos;
+}
+手动添加太麻烦 因此用到了下面插件postcss-viewport-units 自动添加content</code></pre><h3 id="10-postcss-viewport-units-相关配置更多文档"><a href="#10-postcss-viewport-units-相关配置更多文档" class="headerlink" title="10.postcss-viewport-units 相关配置更多文档"></a>10.postcss-viewport-units <a href="https://github.com/springuper/postcss-viewport-units" target="_blank" rel="noopener">相关配置更多文档</a></h3><pre><code>配置:
+ &quot;postcss-viewport-units&quot;: {
+        &quot;silence&quot;: true
+      },</code></pre><h3 id="下面说一下-安装与所有配置"><a href="#下面说一下-安装与所有配置" class="headerlink" title="下面说一下 安装与所有配置"></a>下面说一下 安装与所有配置</h3><p>安装postcss 相关插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install postcss-preset-env postcss-aspect-ratio-mini postcss-px-to-viewport postcss-write-svg  cssnano -S</span><br></pre></td></tr></table></figure>
+
+
+<p>安装vw 兼容插件<br>   <code>npm install postcss-viewport-units viewport-units-buggyfill -S</code></p>
+<h4 id="相关所有配置-pageage-json"><a href="#相关所有配置-pageage-json" class="headerlink" title="相关所有配置 pageage.json"></a>相关所有配置 pageage.json</h4><pre><code>...
+&quot;postcss&quot;: {
+    &quot;plugins&quot;: {
+      &quot;autoprefixer&quot;: {},
+      &quot;postcss-import&quot;: {},
+      &quot;postcss-url&quot;: {},
+      &quot;postcss-aspect-ratio-mini&quot;: {},
+      &quot;postcss-write-svg&quot;: {
+        &quot;utf8&quot;: false
+      },
+      &quot;postcss-px-to-viewport&quot;: {
+        &quot;viewportWidth&quot;: 375,
+        &quot;unitPrecision&quot;: 5,
+        &quot;viewportUnit&quot;: &quot;vw&quot;,
+        &quot;selectorBlackList&quot;: [
+          &quot;.ignore&quot;,
+          &quot;.hairlines&quot;
+        ],
+        &quot;minPixelValue&quot;: 1,
+        &quot;mediaQuery&quot;: false
+      },
+      &quot;postcss-viewport-units&quot;: {
+        &quot;silence&quot;: true
+      },
+      &quot;cssnano&quot;: {
+        &quot;preset&quot;: [
+          &quot;advanced&quot;,
+          {
+            &quot;autoprefixer&quot;: false,
+            &quot;zindex&quot;: false
+          }
+        ]
+      }
+    }
+  },
+  &quot;browserslist&quot;: [
+    &quot;&gt; 1%&quot;,
+    &quot;last 2 versions&quot;
+  ],
+  ...</code></pre>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

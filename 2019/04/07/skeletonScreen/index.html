@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        首屏展示优化 骨架屏 vue - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>ahu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#page-skeleton-webpack-plugin-自动生成骨架屏-由ElemeFE团队开发"><span class="toc-text">page-skeleton-webpack-plugin 自动生成骨架屏 由ElemeFE团队开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-配置如下-基于vue-cli3"><span class="toc-text">1.配置如下 基于vue cli3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-html-里设置-lt-shell-gt-插件会替换此标签为对应的骨架屏"><span class="toc-text">2.html 里设置  &lt;!-- shell --&gt; 插件会替换此标签为对应的骨架屏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用感受"><span class="toc-text">使用感受</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-skeleton-webpack-plugin-根据已有骨架屏自动插入对应的路由"><span class="toc-text">vue-skeleton-webpack-plugin 根据已有骨架屏自动插入对应的路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-vue-config-js配置"><span class="toc-text">1.vue.config.js配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-entry-skeleton-js-文件设置"><span class="toc-text">2.entry-skeleton.js 文件设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用感受-1"><span class="toc-text">使用感受</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-content-loader-快速自定义出骨架屏-react-content-loader（react）"><span class="toc-text">vue-content-loader 快速自定义出骨架屏 react-content-loader（react）</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        首屏展示优化 骨架屏 vue
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-04-07 00:00:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#vue" title="vue">vue</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p><code>骨架屏概念已经很久了，实现骨架屏方式有很多种。下面介绍几种好用的骨架屏实现方案</code></p>
+<h2 id="page-skeleton-webpack-plugin-自动生成骨架屏-由ElemeFE团队开发"><a href="#page-skeleton-webpack-plugin-自动生成骨架屏-由ElemeFE团队开发" class="headerlink" title="page-skeleton-webpack-plugin 自动生成骨架屏 由ElemeFE团队开发"></a>page-skeleton-webpack-plugin 自动生成骨架屏 由ElemeFE团队开发</h2><h3 id="1-配置如下-基于vue-cli3"><a href="#1-配置如下-基于vue-cli3" class="headerlink" title="1.配置如下 基于vue cli3"></a>1.配置如下 基于vue cli3</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const &#123; SkeletonPlugin &#125; = require(<span class="string">'page-skeleton-webpack-plugin'</span>)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    chainWebpack: config =&gt; &#123;</span><br><span class="line">        config.plugin(<span class="string">'html'</span>).tap(opts =&gt; &#123;</span><br><span class="line">            opts[0].minify = &#123; removeComments: <span class="literal">false</span> &#125;</span><br><span class="line">            <span class="built_in">return</span> opts</span><br><span class="line">          &#125;)</span><br><span class="line">        config.plugin(<span class="string">'SkeletonPlugin'</span>).use(SkeletonPlugin, [</span><br><span class="line">          &#123;</span><br><span class="line">            pathname: path.resolve(__dirname, `./shell`), // 用来存储 shell 文件的地址</span><br><span class="line">            staticDir: path.resolve(__dirname, <span class="string">'./dist'</span>), // 最好和 `output.path` 相同</span><br><span class="line">            routes: [<span class="string">'/'</span>, <span class="string">'/about'</span>] // 将需要生成骨架屏的路由添加到数组中</span><br><span class="line">          &#125;</span><br><span class="line">        ])</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://cli.vuejs.org/zh/guide/webpack.html#链式操作-高级" target="_blank" rel="noopener">vue cli 链式操作</a></p>
+<p><code>shell 目录是用来存取生成的骨架屏目录。生成操作见：下面page-skeleton-webpack-plugin配置使用文档</code></p>
+<p><strong>vue cli3 下<code>page-skeleton server listen at port: 8989</code>报这个错误 按下修改</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">page-skeleton-webpack-plugin 包 下src/skeletonPlugin.js 25行 修改如下</span><br><span class="line"></span><br><span class="line">SkeletonPlugin.prototype.createServer = function () &#123; // eslint-disable-line func-names</span><br><span class="line">  if (!this.server) &#123;</span><br><span class="line">    const server = this.server = new Server(this.options) // eslint-disable-line no-multi-assign</span><br><span class="line">    server.listen().catch(err =&gt; server.log.warn(err))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://github.com/ElemeFE/page-skeleton-webpack-plugin/commit/cd6e14af157bbee9d3442e7b5fd0df79c2b43ce3" target="_blank" rel="noopener">page-skeleton-webpack-plugin有个fix分支未合并</a></p>
+<p>More info: <a href="https://github.com/ElemeFE/page-skeleton-webpack-plugin/blob/master/docs/i18n/zh_cn.md" target="_blank" rel="noopener">page-skeleton-webpack-plugin配置使用文档</a></p>
+<h3 id="2-html-里设置-lt-shell-gt-插件会替换此标签为对应的骨架屏"><a href="#2-html-里设置-lt-shell-gt-插件会替换此标签为对应的骨架屏" class="headerlink" title="2.html 里设置  &lt;!-- shell --&gt; 插件会替换此标签为对应的骨架屏"></a>2.html 里设置  <code>&lt;!-- shell --&gt;</code> 插件会替换此标签为对应的骨架屏</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width,initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;link rel=<span class="string">"icon"</span> href=<span class="string">"&lt;%= BASE_URL %&gt;favicon.ico"</span>&gt;</span><br><span class="line">    &lt;title&gt;eventcmswww&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">      &lt;!-- shell --&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!-- built files will be auto injected --&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>遇到的问题build后骨架屏没有出现</p>
+<p><code>原因cli3 自动打开了打包注视删除操作。按上面设置removeComments false</code><br>打包后文件路径如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">dist</span><br><span class="line">├── about</span><br><span class="line">│   └── index.html</span><br><span class="line">├── css</span><br><span class="line">│   └── app.cdd9559b.css</span><br><span class="line">├── favicon.ico</span><br><span class="line">├── img</span><br><span class="line">│   ├── card1.d9965849.png</span><br><span class="line">│   ├── icons</span><br><span class="line">│   └── logo.82b9c7a5.png</span><br><span class="line">├── index.html</span><br><span class="line">├── js</span><br><span class="line">│   ├── app.1f058936.js</span><br><span class="line">│   ├── app.1f058936.js.map</span><br><span class="line">│   ├── chunk-vendors.5d7c9b8d.js</span><br><span class="line">│   └── chunk-vendors.5d7c9b8d.js.map</span><br><span class="line">├── manifest.json</span><br><span class="line">├── precache-manifest.5dafe8fe95e326b40f63cb53925f6a27.js</span><br><span class="line">├── robots.txt</span><br><span class="line">└── service-worker.js</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用感受"><a href="#使用感受" class="headerlink" title="使用感受"></a>使用感受</h4><pre><code>1.会自动生成对应的静态文件 但是其他没有骨架屏的页面进入 会加载默认的骨架屏 此处不友好
+2.骨架屏展示 到消失的原理：
+    a.会根据对应的路由生成对应的html 文件
+    b.浏览器加载对应的页面在 js加载之前首先渲染静态dom骨架屏展示出现
+    c.页面里js加载完成后 加载对应的路由 替换index.html 里 &lt;div id=app &gt;&lt;/div&gt; 中间的内容骨架屏消失</code></pre><h2 id="vue-skeleton-webpack-plugin-根据已有骨架屏自动插入对应的路由"><a href="#vue-skeleton-webpack-plugin-根据已有骨架屏自动插入对应的路由" class="headerlink" title="vue-skeleton-webpack-plugin 根据已有骨架屏自动插入对应的路由"></a>vue-skeleton-webpack-plugin 根据已有骨架屏自动插入对应的路由</h2><h3 id="1-vue-config-js配置"><a href="#1-vue-config-js配置" class="headerlink" title="1.vue.config.js配置"></a>1.vue.config.js配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">const SkeletonWebpackPlugin = require(&apos;vue-skeleton-webpack-plugin&apos;)</span><br><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    chainWebpack: config =&gt; &#123;</span><br><span class="line">        config.plugin(&apos;SkeletonWebpackPlugin&apos;).use(SkeletonWebpackPlugin,[</span><br><span class="line">              &#123;</span><br><span class="line">                webpackConfig: &#123;</span><br><span class="line">                  entry:&#123;</span><br><span class="line">                    app: path.resolve(__dirname,&apos;./src/entry-skeleton.js&apos;)</span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                quiet: true,</span><br><span class="line">                minimize: true,</span><br><span class="line">                router: &#123;</span><br><span class="line">                  mode: &apos;history&apos;,  //router 模式</span><br><span class="line">                  routes: [</span><br><span class="line">                    &#123;</span><br><span class="line">                      path: &apos;/seo&apos;,</span><br><span class="line">                      skeletonId: &apos;skeletonIndex&apos;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                      path: &apos;/seo/about&apos;,</span><br><span class="line">                      skeletonId: &apos;skeletonAbout&apos;</span><br><span class="line">                    &#125;,</span><br><span class="line">                  ]</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">            ])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-entry-skeleton-js-文件设置"><a href="#2-entry-skeleton-js-文件设置" class="headerlink" title="2.entry-skeleton.js 文件设置"></a>2.entry-skeleton.js 文件设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import Skeleton1 from &apos;./skeleton/Skeleton1.vue&apos;;</span><br><span class="line">import Skeleton2 from &apos;./skeleton/Skeleton2.vue&apos;;</span><br><span class="line"></span><br><span class="line">export default new Vue(&#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">        Skeleton1,</span><br><span class="line">        Skeleton2</span><br><span class="line">    &#125;,</span><br><span class="line">    template: `</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;skeleton1 id=&quot;skeletonIndex&quot; style=&quot;display:none&quot;/&gt;</span><br><span class="line">            &lt;skeleton2 id=&quot;skeletonAbout&quot; style=&quot;display:none&quot;/&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    `</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<pre><code>注：
+    1.id[skeletonIndex] 与vue.config.js里的skeletonId 想对应
+    2.entry-skeleton.js 里引入的Skeleton1.vue 文件就是骨架屏文件</code></pre><h4 id="使用感受-1"><a href="#使用感受-1" class="headerlink" title="使用感受"></a>使用感受</h4><pre><code>1.此插件会把骨架屏文件根据配置打包到 index.html里 通过路由path与skeletonId 来匹配展示
+2.可以对骨架屏做路由 开发环境下调试开发
+3.需要手写骨架屏文件  比较麻烦</code></pre><h2 id="vue-content-loader-快速自定义出骨架屏-react-content-loader（react）"><a href="#vue-content-loader-快速自定义出骨架屏-react-content-loader（react）" class="headerlink" title="vue-content-loader 快速自定义出骨架屏 react-content-loader（react）"></a>vue-content-loader 快速自定义出骨架屏 react-content-loader（react）</h2><pre><code>一个快速开发 绚丽骨架屏的框架</code></pre><p>More info: <a href="https://github.com/egoist/vue-content-loader" target="_blank" rel="noopener">vue-content-loader</a></p>
+<p>More info: <a href="http://danilowoz.com/create-vue-content-loader/" target="_blank" rel="noopener">基于vue-content-loader在线设置骨架屏</a></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

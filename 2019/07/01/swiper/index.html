@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        swiper 相关问题 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>ahu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-滑动页内出现滚动条处理"><span class="toc-text">1. 滑动页内出现滚动条处理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-css-处理"><span class="toc-text">1.css 处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-js-设置处理-判断滑动是否到-最上面或者最下-其他时-阻止冒泡"><span class="toc-text">2.js 设置处理 判断滑动是否到 最上面或者最下 其他时 阻止冒泡</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        swiper 相关问题
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-07-01 00:00:00</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="1-滑动页内出现滚动条处理"><a href="#1-滑动页内出现滚动条处理" class="headerlink" title="1. 滑动页内出现滚动条处理"></a>1. 滑动页内出现滚动条处理</h3><h5 id="1-css-处理"><a href="#1-css-处理" class="headerlink" title="1.css 处理"></a>1.css 处理</h5><pre><code>.swiper-slide 增加 overflow: auto;
+swiper-slide  下面的 内容要超出 滑动页</code></pre><h5 id="2-js-设置处理-判断滑动是否到-最上面或者最下-其他时-阻止冒泡"><a href="#2-js-设置处理-判断滑动是否到-最上面或者最下-其他时-阻止冒泡" class="headerlink" title="2.js 设置处理 判断滑动是否到 最上面或者最下 其他时 阻止冒泡"></a>2.js 设置处理 判断滑动是否到 最上面或者最下 其他时 阻止冒泡</h5><pre><code>var swiper = new Swiper(&apos;.swiper-container&apos;, {
+      direction: &apos;vertical&apos;,
+  });
+  var startScroll, touchStart, touchCurrent;
+  swiper.slides.on(&apos;touchstart&apos;, function (e) {
+      startScroll = this.scrollTop;
+      touchStart = e.targetTouches[0].pageY;
+  }, true);
+  swiper.slides.on(&apos;touchmove&apos;, function (e) {
+      touchCurrent = e.targetTouches[0].pageY;
+      var touchesDiff = touchCurrent - touchStart;
+      var slide = this;
+      var onlyScrolling = 
+              ( slide.scrollHeight &gt; slide.offsetHeight ) &amp;&amp; //allow only when slide is scrollable
+              (
+                  ( touchesDiff &lt; 0 &amp;&amp; startScroll === 0 ) || //start from top edge to scroll bottom
+                  ( touchesDiff &gt; 0 &amp;&amp; startScroll === ( slide.scrollHeight - slide.offsetHeight ) ) || //start from bottom edge to scroll top
+                  ( startScroll &gt; 0 &amp;&amp; startScroll &lt; ( slide.scrollHeight - slide.offsetHeight ) ) //start from the middle
+              );
+      if (onlyScrolling) {
+          e.stopPropagation();
+      }
+  }, true);</code></pre><p><a href="https://github.com/nolimits4web/Swiper/issues/1467" target="_blank" rel="noopener">参考</a></p>
+<pre><code>&lt;!DOCtype html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0&quot;&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;
+    &lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css&quot;&gt;
+
+    &lt;style&gt;
+    body, html {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        height: 100%;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        background: #f1f1f1;
+        color:#000;
+        text-align: center;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+
+&lt;body&gt;
+
+&lt;div class=&quot;swiper-container&quot;&gt;
+    &lt;div class=&quot;swiper-wrapper&quot;&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 1
+
+
+        &lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 2
+
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique libero reprehenderit facilis. Pariatur illum repellat distinctio consectetur, minima ad aspernatur odio et obcaecati a unde, accusamus architecto minus, dicta consequatur!&lt;/p&gt;
+            &lt;p&gt;Illo laboriosam deserunt a quas tempore perspiciatis voluptates dignissimos sunt accusamus, quod quae pariatur impedit rerum, saepe, mollitia cum error consectetur officiis ipsum beatae ut. Eveniet, maxime provident? Mollitia, ullam.&lt;/p&gt;
+            &lt;p&gt;Nesciunt magni, voluptatum omnis, assumenda maiores harum vel ipsa illo nostrum a non quos optio repellat tenetur ducimus dolorem placeat! Minima cum, animi ullam asperiores qui modi perferendis, earum quis!&lt;/p&gt;
+            &lt;p&gt;Sint unde corporis, quia ducimus reprehenderit nostrum facilis itaque temporibus corrupti. Explicabo et illo itaque sequi placeat eos architecto, sed accusantium nostrum nihil autem impedit obcaecati voluptatum minima quidem saepe.&lt;/p&gt;
+            &lt;p&gt;Facilis in aliquam incidunt magni! Neque eos consequatur recusandae sint labore perspiciatis deleniti commodi beatae eveniet omnis, itaque expedita voluptates facere rerum distinctio, aperiam dolores totam doloremque corrupti vitae quibusdam!&lt;/p&gt;
+            &lt;p&gt;Nemo natus laudantium iusto harum vero praesentium earum rerum corporis pariatur, voluptas, doloribus ipsa vitae assumenda maxime cum magni cumque alias amet laborum libero hic. Eaque accusamus, ipsa assumenda. Dolores.&lt;/p&gt;
+            &lt;p&gt;Fuga minima perferendis deleniti sed repellendus totam suscipit. Aspernatur laboriosam debitis nisi harum in. Harum, ipsa consequuntur sequi natus, esse quod quaerat qui eligendi nulla iusto magnam fuga iste laudantium.&lt;/p&gt;
+            &lt;p&gt;In dolorum, aspernatur eius labore? Voluptates eos dolore id quidem, at asperiores facere ea impedit officiis vero aspernatur. Nobis itaque assumenda recusandae, facere a ab. Unde fugiat quisquam, libero suscipit.&lt;/p&gt;
+            &lt;p&gt;Facere maiores dicta, recusandae sit voluptates dolorem. Veritatis quam iure, commodi consectetur sunt, eligendi possimus cupiditate. Cumque quibusdam veritatis, autem! Eligendi odio eos libero adipisci, iste sapiente unde. Animi, ea!&lt;/p&gt;
+            &lt;p&gt;Asperiores, dolorum itaque odio exercitationem, nemo officia, atque ex excepturi, accusantium a repellendus? Rerum minima, numquam ipsa unde aperiam totam, delectus distinctio quos obcaecati odit, maiores ipsam inventore beatae ullam?&lt;/p&gt;
+            &lt;p&gt;Ut perspiciatis enim, voluptatibus laborum, maiores fugiat sequi dicta quam quos in nam distinctio sed corporis obcaecati nesciunt tenetur mollitia, rem eligendi nulla quasi saepe animi pariatur aspernatur! Tempora, provident.&lt;/p&gt;
+            &lt;p&gt;Non tempora dolore, laboriosam doloremque earum quibusdam, quae ipsam harum, repudiandae explicabo nihil nam aut at. Quisquam qui reiciendis illum, dicta nesciunt aliquid atque earum, odit repellendus debitis sapiente dolores.&lt;/p&gt;
+            &lt;p&gt;Ad, atque, sint. Nihil ex doloremque, numquam voluptatum qui, explicabo. Quisquam, esse at voluptate debitis perspiciatis velit dolorem accusamus voluptatum dicta, neque numquam sint, harum quis officiis rem autem dolore.&lt;/p&gt;
+            &lt;p&gt;Ab dolorem pariatur libero recusandae ratione aut nihil, sint quae ipsa. Nobis quidem sequi consequatur porro tempora suscipit debitis cum explicabo corrupti neque, magnam dicta sapiente perspiciatis accusamus! Nulla, blanditiis.&lt;/p&gt;
+            &lt;p&gt;Sit quas magnam placeat, modi recusandae id quod voluptatibus voluptatem. Sit, nihil, vitae. Dolorem ducimus dolores tenetur. Omnis impedit similique laboriosam, dolor unde voluptas animi iure vel. Facilis odit, reiciendis.&lt;/p&gt;
+            &lt;p&gt;Voluptas optio iusto autem molestias soluta maiores amet aut fuga ipsa inventore, reprehenderit quis voluptatem cum nihil aliquam rerum incidunt perferendis est accusantium labore, rem iure, necessitatibus quod voluptatum. Incidunt.&lt;/p&gt;
+            &lt;p&gt;Non ipsa, optio deserunt. Minus numquam omnis facere atque dolore suscipit eius expedita delectus dignissimos molestiae dicta inventore illo, quaerat beatae error recusandae quas sunt labore quae! Ex quidem, sed.&lt;/p&gt;
+            &lt;p&gt;Placeat veniam totam, error neque, dolore dolores, pariatur rerum voluptatibus recusandae reiciendis dicta itaque nisi ratione fugiat illum perferendis eaque. Accusamus dolorem, autem mollitia sit modi vitae numquam, perferendis facere.&lt;/p&gt;
+            &lt;p&gt;Voluptates quos recusandae pariatur quas beatae ad at odit, est rerum sint repudiandae adipisci sapiente ipsam doloremque corporis excepturi harum magnam eaque eveniet, fuga repellendus accusantium incidunt dolor perferendis? Suscipit.&lt;/p&gt;
+            &lt;p&gt;Eaque reprehenderit assumenda expedita sapiente error consequuntur ullam quisquam ab, placeat sit amet optio, ad corporis unde aliquam eius harum consequatur, quasi quae mollitia debitis aspernatur. Ipsam sed rerum perspiciatis.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 3&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 4&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 5&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 6&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 7&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 8&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 9&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 10&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+let swiper = new Swiper(&apos;.swiper-container&apos;, {
+    direction: &apos;vertical&apos;,
+    initialSlide : 0,
+    noSwiping : true
+});
+let startScroll, touchStart, touchCurrent;
+swiper.slides.on(&apos;touchstart&apos;, function (e) {
+    startScroll = this.scrollTop;
+    touchStart = e.targetTouches[0].pageY;
+}, true);
+swiper.slides.on(&apos;touchmove&apos;, function (e) {
+    touchCurrent = e.targetTouches[0].pageY;
+    let touchesDiff = touchCurrent - touchStart;
+    let slide = this;
+    let onlyScrolling =
+        ( slide.scrollHeight &gt; slide.offsetHeight ) &amp;&amp;
+        (
+            ( touchesDiff &lt; 0 &amp;&amp; startScroll === 0 ) ||
+            ( touchesDiff &gt; 0 &amp;&amp; startScroll === ( slide.scrollHeight - slide.offsetHeight ) ) ||
+            ( startScroll &gt; 0 &amp;&amp; startScroll &lt; ( slide.scrollHeight - slide.offsetHeight ) )
+        );
+    if (onlyScrolling) {
+        e.stopPropagation();
+    }
+}, true);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

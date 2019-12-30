@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        vue cli3 +ts + pwa 配置详解 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>ahu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#TypeScript相关处理"><span class="toc-text">TypeScript相关处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-tsconfig-json-配置-配置详解"><span class="toc-text">1. tsconfig.json 配置 配置详解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-vue-property-decorator-vue官方维护-类修饰器支持（typescript）-more"><span class="toc-text">2. vue-property-decorator vue官方维护 类修饰器支持（typescript）  more</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-vuex-class-vuex修饰器more"><span class="toc-text">3. vuex-class vuex修饰器more</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-设置声明文件-第三方未提供可用的声明文件-处理如下"><span class="toc-text">4. 设置声明文件 第三方未提供可用的声明文件 处理如下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-使用了vue-class-component-vue-router-路由守卫处理"><span class="toc-text">5. 使用了vue-class-component   vue-router 路由守卫处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PWA相关处理-vue-config-js-里-以GenerateSW-为例"><span class="toc-text">PWA相关处理 vue.config.js 里 以GenerateSW 为例</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        vue cli3 +ts + pwa 配置详解
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-08-11 00:00:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#vue" title="vue">vue</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#TypeScript" title="TypeScript">TypeScript</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#postcss" title="postcss">postcss</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <hr>
+<pre><code>使用 vue cli3 搭建项目 
+vue create hello-world 
+按空格健 选择以下 选项
+     ◉ Babel
+     ◉ TypeScript
+     ◉ Progressive Web App (PWA) Support
+     ◉ Router
+     ◉ Vuex
+     ◉ CSS Pre-processors  
+     ◉ Linter / Formatter
+     ◉ Unit Testing</code></pre><hr>
+<h3 id="TypeScript相关处理"><a href="#TypeScript相关处理" class="headerlink" title="TypeScript相关处理"></a>TypeScript相关处理</h3><hr>
+<pre><code>执行安装
+npm i -S vue-class-component vue-property-decorator vuex-class</code></pre><hr>
+<h4 id="1-tsconfig-json-配置-配置详解"><a href="#1-tsconfig-json-配置-配置详解" class="headerlink" title="1. tsconfig.json 配置 配置详解"></a>1. tsconfig.json 配置 <a href="https://www.tslang.cn/docs/handbook/compiler-options.html" target="_blank" rel="noopener">配置详解</a></h4><pre><code>{
+  &quot;compilerOptions&quot;: {
+    &quot;target&quot;: &quot;esnext&quot;,
+    &quot;module&quot;: &quot;esnext&quot;,
+    &quot;strict&quot;: true,
+    &quot;jsx&quot;: &quot;preserve&quot;,
+    &quot;importHelpers&quot;: true,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;esModuleInterop&quot;: true,
+    &quot;allowSyntheticDefaultImports&quot;: true,
+    &quot;sourceMap&quot;: true,
+    &quot;baseUrl&quot;: &quot;.&quot;,
+    &quot;types&quot;: [
+      &quot;webpack-env&quot;
+    ],
+    &quot;paths&quot;: {
+      &quot;@/*&quot;: [
+        &quot;src/*&quot;
+      ]
+    },
+    &quot;lib&quot;: [
+      &quot;esnext&quot;,
+      &quot;dom&quot;,
+      &quot;dom.iterable&quot;,
+      &quot;scripthost&quot;
+    ]
+  },
+  &quot;include&quot;: [
+    &quot;src/**/*.ts&quot;,
+    &quot;src/**/*.tsx&quot;,
+    &quot;src/**/*.vue&quot;,
+    &quot;tests/**/*.ts&quot;,
+    &quot;tests/**/*.tsx&quot;
+  ],
+  &quot;exclude&quot;: [
+    &quot;node_modules&quot;
+  ]
+}</code></pre><h4 id="2-vue-property-decorator-vue官方维护-类修饰器支持（typescript）-more"><a href="#2-vue-property-decorator-vue官方维护-类修饰器支持（typescript）-more" class="headerlink" title="2. vue-property-decorator vue官方维护 类修饰器支持（typescript）  more"></a>2. vue-property-decorator vue官方维护 类修饰器支持（typescript）  <a href="https://github.com/kaorun343/vue-property-decorator" target="_blank" rel="noopener">more</a></h4><pre><code>vue-property-decorator 依赖vue-class-component 
+语法
+@Component({
+  props: {
+    propMessage: String
+  }
+})
+export default class App extends Vue {
+  // initial data
+  msg = 123
+
+  // use prop values for initial data
+  helloMsg = &apos;Hello, &apos; + this.propMessage
+
+  // lifecycle hook
+  mounted () {
+    this.greet()
+  }
+
+  // computed
+  get computedMsg () {
+    return &apos;computed &apos; + this.msg
+  }
+
+  // method
+  greet () {
+    alert(&apos;greeting: &apos; + this.msg)
+  }
+}</code></pre><p><a href="https://github.com/vuejs/vue-class-component" target="_blank" rel="noopener">更多例子</a>   </p>
+<h4 id="3-vuex-class-vuex修饰器more"><a href="#3-vuex-class-vuex修饰器more" class="headerlink" title="3. vuex-class vuex修饰器more"></a>3. vuex-class vuex修饰器<a href="https://github.com/ktsn/vuex-class/" target="_blank" rel="noopener">more</a></h4><pre><code>import Vue from &apos;vue&apos;
+import Component from &apos;vue-class-component&apos;
+import {
+  State,
+  Getter,
+  Action,
+  Mutation,
+  namespace
+} from &apos;vuex-class&apos;
+
+const someModule = namespace(&apos;path/to/module&apos;)
+
+@Component
+export class MyComp extends Vue {
+  @State(&apos;foo&apos;) stateFoo
+  @State(state =&gt; state.bar) stateBar
+  @Getter(&apos;foo&apos;) getterFoo
+  @Action(&apos;foo&apos;) actionFoo
+  @Mutation(&apos;foo&apos;) mutationFoo
+  @someModule.Getter(&apos;foo&apos;) moduleGetterFoo
+
+  // If the argument is omitted, use the property name
+  // for each state/getter/action/mutation type
+  @State foo
+  @Getter bar
+  @Action baz
+  @Mutation qux
+
+  created () {
+    this.stateFoo // -&gt; store.state.foo
+    this.stateBar // -&gt; store.state.bar
+    this.getterFoo // -&gt; store.getters.foo
+    this.actionFoo({ value: true }) // -&gt; store.dispatch(&apos;foo&apos;, { value: true })
+    this.mutationFoo({ value: true }) // -&gt; store.commit(&apos;foo&apos;, { value: true })
+    this.moduleGetterFoo // -&gt; store.getters[&apos;path/to/module/foo&apos;]
+  }
+}</code></pre><h4 id="4-设置声明文件-第三方未提供可用的声明文件-处理如下"><a href="#4-设置声明文件-第三方未提供可用的声明文件-处理如下" class="headerlink" title="4. 设置声明文件 第三方未提供可用的声明文件 处理如下"></a>4. 设置声明文件 第三方未提供可用的声明文件 处理如下</h4><pre><code>a. 使用vuedraggable
+在XXX.d.ts文件里添加一下 vuedraggable 就可以正常使用了
+
+declare module &apos;vuedraggable&apos;
+
+
+b. axios 使用 XXX.d.ts 添加如下
+
+import Vue from &apos;vue&apos;
+declare module &quot;vue/types/vue&quot; {
+  interface Vue {
+    $https: any
+  }
+}</code></pre><h4 id="5-使用了vue-class-component-vue-router-路由守卫处理"><a href="#5-使用了vue-class-component-vue-router-路由守卫处理" class="headerlink" title="5. 使用了vue-class-component   vue-router 路由守卫处理"></a>5. 使用了vue-class-component   vue-router 路由守卫处理</h4><pre><code>// class-component-hooks.js
+import Component from &apos;vue-class-component&apos;
+Component.registerHooks([
+  &apos;beforeRouteEnter&apos;,
+  &apos;beforeRouteLeave&apos;,
+  &apos;beforeRouteUpdate&apos; // for vue-router 2.2+
+])</code></pre><h3 id="PWA相关处理-vue-config-js-里-以GenerateSW-为例"><a href="#PWA相关处理-vue-config-js-里-以GenerateSW-为例" class="headerlink" title="PWA相关处理 vue.config.js 里 以GenerateSW 为例"></a>PWA相关处理 vue.config.js 里 以GenerateSW 为例</h3><pre><code>...
+pwa: {
+    name: &apos;My App1&apos;,
+    themeColor: &apos;#4DBA87&apos;,
+    msTileColor: &apos;#000000&apos;,
+    appleMobileWebAppCapable: &apos;yes&apos;,
+    appleMobileWebAppStatusBarStyle: &apos;black&apos;,
+    workboxPluginMode: &apos;GenerateSW&apos;,
+    // workboxPluginMode: &apos;InjectManifest&apos;,
+    workboxOptions: {
+      runtimeCaching: [
+        {
+          urlPattern: /leaf/,
+          handler: &apos;networkFirst&apos;,
+          options: {
+            networkTimeoutSeconds: 10,
+            cacheName: &apos;my-api-cache&apos;,
+            expiration: {
+              maxEntries: 5,
+              maxAgeSeconds: 30 // 30 days
+            },
+            cacheableResponse: {
+              statuses: [200]
+            }
+          }
+        },
+        {
+          urlPattern: /.*\.(?:js|css)/,
+          handler: &apos;networkFirst&apos;,
+          options: {
+            cacheName: &apos;my-js-cache&apos;,
+            expiration: {
+              maxEntries: 30,
+              maxAgeSeconds: 30
+            },
+            cacheableResponse: {
+              statuses: [0, 200]
+            }
+          }
+        }
+      ]
+    }
+  },
+  ...</code></pre><p>  上述配置[runtimeCaching]  build 后 service-worker.js 里会多处一下两行</p>
+<pre><code>workbox.routing.registerRoute(/leaf/, workbox.strategies.networkFirst({ &quot;cacheName&quot;:&quot;my-api-cache&quot;,&quot;networkTimeoutSeconds&quot;:10, plugins: [new workbox.expiration.Plugin({&quot;maxEntries&quot;:5,&quot;maxAgeSeconds&quot;:30,&quot;purgeOnQuotaError&quot;:false}), new workbox.cacheableResponse.Plugin({&quot;statuses&quot;:[200]})] }), &apos;GET&apos;);
+workbox.routing.registerRoute(/.*\.(?:js|css)/, workbox.strategies.networkFirst({ &quot;cacheName&quot;:&quot;my-js-cache&quot;, plugins: [new workbox.expiration.Plugin({&quot;maxEntries&quot;:30,&quot;maxAgeSeconds&quot;:30,&quot;purgeOnQuotaError&quot;:false}), new workbox.cacheableResponse.Plugin({&quot;statuses&quot;:[0,200]})] }), &apos;GET&apos;);</code></pre><p> <a href="https://github.com/vuejs/vue-docs-zh-cn/tree/master/vue-cli-plugin-pwa" target="_blank" rel="noopener">更多相关配置</a><br> <a href="https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin" target="_blank" rel="noopener">runtimeCaching 相关配置</a><br> <a href="/2019/08/09/pwa/">‘networkFirst’等缓存策略见我另一片文章</a></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
